@@ -9,6 +9,25 @@ import usersRouter from './routes/users';
 
 var app = express();
 
+// Connect DB:
+var mongoose = require('mongoose');
+let options = {
+  db: { native_parser: true },
+  server: { poolSize: 5 },
+  user: 'hungvu',
+  pass: 'vuhung'
+};
+// Use native Promises
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/blogMongoDB', options).then(
+  () => {
+    console.log("connect DB successfully");
+  },
+  err => {
+    console.log('Connection failed. Error: ${err}');
+  }
+);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
