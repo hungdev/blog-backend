@@ -1,14 +1,8 @@
 // var express = require('express');
 // var router = express.Router();
-var router = global.router;
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-
 import checkAuth from '../middleware/checkAuth'
-
-const User = require("../models/user");
 const UserController = require('../controllers/user');
+var router = global.router;
 
 /* GET users listing. */
 router.get("/get-users", UserController.get_users);

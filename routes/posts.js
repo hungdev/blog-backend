@@ -1,7 +1,9 @@
 // var express = require('express');
 // var router = express.Router();
+import multer from 'multer';
+import checkAuth from '../middleware/checkAuth'
+const PostController = require('../controllers/post');
 var router = global.router;
-const multer = require('multer');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -29,18 +31,20 @@ const upload = multer({
   fileFilter: fileFilter
 });
 
-import checkAuth from '../middleware/checkAuth'
 
-const PostController = require('../controllers/post');
 
 /* GET users listing. */
 router.get("/get-all-post", PostController.get_all_post);
+
+router.put("/update-post", PostController.update_post);
+
+router.get("/get-detail-post", PostController.get_detail_post);
 
 router.post("/create-post", checkAuth, upload.single('imageUrl'), PostController.create_post);
 
 router.get("/open-image", PostController.open_image);
 
+router.delete("/post/:postId", PostController.post_delete);
 
-// router.delete("/user/:userId", checkAuth, UserController.user_delete);
 
 module.exports = router;
