@@ -1,8 +1,12 @@
 
 Start DB:
+```
 mongod --port 27017 --dbpath /Users/cee/Desktop/Blog/Blog/database
+```
 Connect DB:
+```
 mongo --port 27017 -u "hungvu" -p "vuhung" --authenticationDatabase "blogMongoDB"
+```
 
 lsof -i :27017
 
