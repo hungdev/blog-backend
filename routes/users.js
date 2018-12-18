@@ -1,6 +1,6 @@
 // var express = require('express');
 // var router = express.Router();
-import checkAuth from '../middleware/checkAuth'
+const checkAuth = require('../middleware/checkAuth');
 const UserController = require('../controllers/user');
 var router = global.router;
 

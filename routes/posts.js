@@ -1,7 +1,7 @@
 // var express = require('express');
 // var router = express.Router();
-import multer from 'multer';
-import checkAuth from '../middleware/checkAuth'
+const multer = require('multer');
+const checkAuth = require('../middleware/checkAuth');
 const PostController = require('../controllers/post');
 var router = global.router;
 
