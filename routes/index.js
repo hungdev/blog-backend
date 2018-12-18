@@ -10,4 +10,5 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-export default router;
+// export default router;
+module.exports = router;
