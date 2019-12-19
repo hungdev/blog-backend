@@ -12,6 +12,8 @@ lsof -i :27017
 
 kill -9 [process]
 
+===================================================
+* Start
 
 npm i -s express-generater -g
 express --view=ejs Blog
@@ -43,7 +45,7 @@ mongod --port 27017 --dbpath /Users/cee/Desktop/Blog/Blog/database
 client tab: 
 mongo --port 27017
 
-use blogMongoDB
+use blogMongoDB        (sử dụng mới)
 
 db.createUser({
   user: "hungvu",
@@ -51,7 +53,14 @@ db.createUser({
   roles: ["readWrite", "dbAdmin", "dbOwner"]
 })
 
+
+
 tab server: 
+
+> tắt server để đăng nhập lại ở tab server dùng phím control + c
+
+và gõ lệnh:
+
 mongod --auth --port 27017 --dbpath /Users/cee/Desktop/Blog/Blog/database
 
 tab client:
