@@ -15,8 +15,10 @@ kill -9 [process]
 ===================================================
 * Start
 
-npm i -s express-generater -g
-express --view=ejs Blog
+`npm i -s express-generater -g`
+
+`express --view=ejs Blog`
+
 edit to 
 ```
   "scripts": {
